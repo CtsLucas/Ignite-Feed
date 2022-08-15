@@ -1,5 +1,6 @@
+import { Comment } from '../Comment';
 import {
-  Container, Author, AuthorInfo, Header, Content, Form,
+  Container, Author, AuthorInfo, Header, Content, Form, CommentList,
 } from './styles';
 
 export function Post() {
@@ -50,8 +51,12 @@ export function Post() {
         <footer>
           <button type="submit">Publicar</button>
         </footer>
-
       </Form>
+
+      <CommentList>
+        <Comment />
+      </CommentList>
+
     </Container>
   );
 }
