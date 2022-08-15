@@ -14,6 +14,6 @@ export const Container = styled.header`
 
   h1 {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: bold;
   }
 `;

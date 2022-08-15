@@ -69,3 +69,57 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Form = styled.form`
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.gray[600]};
+
+  strong {
+    line-height: 1.6;
+    color: ${({ theme }) => theme.colors.gray[100]};
+  }
+
+  textarea {
+    width: 100%;
+    height: 6rem;
+    background: ${({ theme }) => theme.colors.gray[900]};
+    border: 0;
+    resize: none;
+    padding: 1rem;
+    border-radius: 8px;
+    color: ${({ theme }) => theme.colors.gray[100]};
+    line-height: 1.4;
+    margin-top: 1rem;
+  }
+
+  footer {
+    visibility: hidden;
+    max-height: 0;
+
+    button {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: ${({ theme }) => theme.colors.primary.main};
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s;
+
+      &:hover {
+      background: ${({ theme }) => theme.colors.primary.light};
+      }
+
+      &:focus {
+      box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary.light};
+      }
+    }
+  }
+  &:focus-within footer {
+      visibility: visible;
+      max-height: none;
+    }
+`;

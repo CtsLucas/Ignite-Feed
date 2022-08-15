@@ -1,5 +1,5 @@
 import {
-  Container, Author, AuthorInfo, Header, Content,
+  Container, Author, AuthorInfo, Header, Content, Form,
 } from './styles';
 
 export function Post() {
@@ -40,6 +40,18 @@ export function Post() {
           <a href="/">#rocketseat</a>
         </p>
       </Content>
+      <Form>
+        <strong>Deixe seu feedback</strong>
+
+        <textarea
+          placeholder="Deixe um comentário..."
+        />
+
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+
+      </Form>
     </Container>
   );
 }
