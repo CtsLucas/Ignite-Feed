@@ -6,6 +6,12 @@ export default createGlobalStyle`
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary.main};
   }
 
+  html {
+    @media (max-width: 768px) {
+    font-size: 87.5%;
+  }
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -23,4 +29,6 @@ export default createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+
+
 `;
