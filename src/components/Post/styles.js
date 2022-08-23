@@ -25,14 +25,6 @@ export const Author = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  & > img {
-    width: calc(3rem + 12px);
-    height: calc(3rem + 12px);
-    border-radius: 8px;
-    border: 4px solid ${({ theme }) => theme.colors.gray[800]};
-    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
-  }
 `;
 
 export const AuthorInfo = styled.div`

@@ -1,3 +1,4 @@
+import { Avatar } from '../Avatar';
 import { Comment } from '../Comment';
 import {
   Container, Author, AuthorInfo, Header, Content, Form, CommentList,
@@ -8,7 +9,7 @@ export function Post() {
     <Container>
       <Header>
         <Author>
-          <img src="https://github.com/CtsLucas.png" alt="" />
+          <Avatar src="https://github.com/CtsLucas.png" />
           <AuthorInfo>
             <strong>
               Lucas Cavalcante

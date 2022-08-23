@@ -1,4 +1,5 @@
 import { ThumbsUp, Trash } from 'phosphor-react';
+import { Avatar } from '../Avatar';
 import {
   AuthorAndTime, Cointainer, CommentBox, CommentContent,
 } from './styles';
@@ -6,7 +7,7 @@ import {
 export function Comment() {
   return (
     <Cointainer>
-      <img src="https://github.com/CtsLucas.png" alt="" />
+      <Avatar src="https://github.com/CtsLucas.png" hasBorder={false} />
 
       <CommentBox>
         <CommentContent>

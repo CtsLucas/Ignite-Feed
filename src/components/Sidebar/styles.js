@@ -19,14 +19,6 @@ export const Profile = styled.div`
 
   margin-top: calc(0px - 1.5rem - 6px);
 
-  & > img {
-    width: calc(3rem + 12px);
-    height: calc(3rem + 12px);
-    border-radius: 8px;
-    border: 4px solid ${({ theme }) => theme.colors.gray[800]};
-    outline: 2px solid ${({ theme }) => theme.colors.primary.main};
-  }
-
   strong {
     margin-top: 1rem;
     color: ${({ theme }) => theme.colors.gray[100]};
