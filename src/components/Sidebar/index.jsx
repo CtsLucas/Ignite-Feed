@@ -10,7 +10,7 @@ export function Sidebar() {
       <Profile>
         <Avatar src="https://github.com/CtsLucas.png" />
 
-        <strong>Diego Fernandes</strong>
+        <strong>Lucas Cavalcante</strong>
         <span>Web Developer</span>
       </Profile>
 

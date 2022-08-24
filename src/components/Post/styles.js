@@ -101,12 +101,17 @@ export const Form = styled.form`
     cursor: pointer;
     transition: background-color 0.1s;
 
-      &:hover {
+      &:not(:disabled):hover {
       background: ${({ theme }) => theme.colors.primary.light};
       }
 
       &:focus {
       box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary.light};
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
       }
     }
   }
