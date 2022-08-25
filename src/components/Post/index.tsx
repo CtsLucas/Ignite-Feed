@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
@@ -9,7 +8,24 @@ import {
   Container, Author, AuthorInfo, Header, Content, Form, CommentList,
 } from './styles';
 
-export function Post({ author, content, publishedAt }) {
+interface Author {
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
+
+interface Content {
+  type: string;
+  text: string;
+}
+
+interface PostProps {
+  author: Author;
+  content: Content[];
+  publishedAt: Date;
+}
+
+export function Post({ author, content, publishedAt }: PostProps) {
   const [comments, setComments] = useState([
     'Post muito bacana, parabéns!',
   ]);
@@ -27,29 +43,27 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true,
   });
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault();
-
-    const newComment = event.target.comment.value;
 
     setComments([
       ...comments,
-      newComment,
+      newCommentText,
     ]);
 
     setNewCommentText('');
   }
 
-  function handleNewCommentChange(event) {
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement> ) {
     event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
   }
 
-  function handleNewCommentInvalid(event) {
+  function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('Por favor, digite um comentário');
   }
 
-  function deleteComment(commentTodelete) {
+  function deleteComment(commentTodelete: string) {
     const commentsWithoutDeletedOne = comments.filter((comment) => comment !== commentTodelete);
     setComments(commentsWithoutDeletedOne);
   }
@@ -115,9 +129,3 @@ export function Post({ author, content, publishedAt }) {
     </Container>
   );
 }
-
-Post.propTypes = {
-  author: PropTypes.objectOf(PropTypes.string).isRequired,
-  content: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
-  publishedAt: PropTypes.instanceOf(Date).isRequired,
-};

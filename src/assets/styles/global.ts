@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeType } from 'styled-components';
 
-export default createGlobalStyle`
+export default createGlobalStyle<{ theme: ThemeType }>`
   :focus {
     outline: transparent;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary.main};

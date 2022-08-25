@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface AvatarProps {
+  hasBorder?: boolean;
+}
+
+export const Container = styled.div<AvatarProps>`
   & > img {
     width: 3rem;
     height: 3rem;
